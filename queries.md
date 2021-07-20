@@ -88,11 +88,11 @@ limit:
 
 ### 13. All the companies that have been acquired after 2010, order by the acquisition amount, and retrieve only their `name` and `acquisition` field.
 
-query: /You should copy/paste the skip in here/
-projection: /You should copy/paste the skip in here/
-sort: /You should copy/paste the skip in here/
-skip: /You should copy/paste the skip in here/
-limit: /You should copy/paste the skip in here/
+query: {"acquisition.acquired_year": {$gt: 2010}}
+projection: {name: 1, acquisition: 1, _id: 0}
+sort: {"acquisition.price_amount": -1}
+skip: 
+limit: 
 
 ### 14. Order the companies by their `founded year`, retrieving only their `name` and `founded year`.
 
@@ -104,11 +104,11 @@ limit: /You should copy/paste the skip in here/
 
 ### 15. All the companies that have been founded on the first seven days of the month, including the seventh. Sort them by their `acquisition price` in a descending order. Limit the search to 10 documents.
 
-query: /You should copy/paste the skip in here/
-projection: /You should copy/paste the skip in here/
-sort: /You should copy/paste the skip in here/
-skip: /You should copy/paste the skip in here/
-limit: /You should copy/paste the skip in here/
+query: {founded_day: {$lte: 7}}
+projection: 
+sort: { "acquisition.price_amount": -1 }
+skip: 
+limit: 10
 
 ### 16. All the companies on the 'web' `category` that have more than 4000 employees. Sort them by the amount of employees in ascending order.
 
